@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DistanceController.h
 //  Fuel4Fueled
 //
 //  Created by Ellidi Jatgeirsson on 5/22/12.
@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-@property (nonatomic) char byte1;
-@property (nonatomic) char byte2;
-
-- (IBAction) configureBump;
+@interface DistanceController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *frame;
 
 @end

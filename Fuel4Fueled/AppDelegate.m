@@ -6,6 +6,29 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+/*
+ This revised version has a very different layout from the first one: I've tried to strictly delineate the
+ models from the controllers, and kept the views coming from the storyboard, by putting all methods relating
+ to the data received from people in the singleton class 'GroupData.' 
+ 
+ All controllers do just what they're supposed to do: control the views. No more dealing with model data.
+ 
+ The AppDelegate (as you see below) only starts the application. I got rid of all the protocals that I 
+ didn't use that were leftover at the top of some of my controllers from an earlier iteration of the code. 
+ 
+ I correctly implemented (I think) the table views. 
+ 
+ I reorganized the code in places to have more wrapper methods when possible, to make it easier to read.
+ 
+ I kept the location updates starting at the beginning so as to get a more accurate fix, but configured
+ the Bump API later in the app, once all the options have been chosen (see ViewController.m).
+ 
+ I removed the reference to an unimplemented method which made the app crash (it was a debugging type thing).
+ 
+ I looked at where I suspected the pure C code you took issue with was and tried to think of how to change
+ it. See the comment in GroupData.m just above the calcPrefs method.
+ */
+
 #import "AppDelegate.h"
 
 @implementation AppDelegate
@@ -14,35 +37,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     return YES;
-}
-							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end
