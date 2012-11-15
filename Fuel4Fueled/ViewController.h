@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GroupData.h"
 
 @interface ViewController : UIViewController
 @property (nonatomic) char byte1;
 @property (nonatomic) char byte2;
+@property (nonatomic) GroupData *groupData;
 
 - (IBAction) configureBump;
 

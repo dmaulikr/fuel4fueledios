@@ -7,7 +7,6 @@
 //
 
 #import "OptionViewController.h"
-#import "GroupData.h"
 #import "GTMNSString+URLArguments.h"
 
 @interface OptionViewController ()
@@ -24,7 +23,7 @@
 UIAlertView *alert;
 NSMutableData *responseData;
 
-GroupData *sharedGD;
+@synthesize groupData = _groupData;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,8 +38,6 @@ GroupData *sharedGD;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    sharedGD = [GroupData sharedManager];
     
     alert = [[UIAlertView alloc] initWithTitle:@"Fetching options\nPlease Wait..." message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
     [alert show];
@@ -56,7 +53,7 @@ GroupData *sharedGD;
 
 -(void) loadInfo
 {
-    [sharedGD calcPrefs];
+    [self.groupData calcPrefs];
     
     [self setOpt1];
     
@@ -67,17 +64,17 @@ GroupData *sharedGD;
 
 -(void)setOpt1
 {
-    if (sharedGD.nam1) {
-        [title1 setText:sharedGD.nam1];
-        [rating1 setText:sharedGD.rat1];
+    if (self.groupData.nam1) {
+        [title1 setText:self.groupData.nam1];
+        [rating1 setText:self.groupData.rat1];
     }
 }
 
 -(void)setOpt2
 {
-    if (sharedGD.nam1) {
-        [title2 setText:sharedGD.nam2];
-        [rating2 setText:sharedGD.rat2];
+    if (self.groupData.nam1) {
+        [title2 setText:self.groupData.nam2];
+        [rating2 setText:self.groupData.rat2];
     }
 }
 

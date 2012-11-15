@@ -7,7 +7,7 @@
 //
 
 #import "ChoiceViewController.h"
-#import "GroupData.h"
+#import "ViewController.h"
 
 @interface ChoiceViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *questions;
@@ -35,6 +35,10 @@
         case FOOD_CHOICE:
         {
             [self.navigationController.navigationItem setTitle:@"Food"];
+            [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:.682 green:0 blue:0 alpha:1]];
+            
+            self.groupData = [[GroupData alloc]init];
+            
             self.questionLabel.text = [self.questions objectAtIndex:FOOD_CHOICE];
             self.options = [[NSArray alloc]initWithObjects:@"Something Asian...",
                             @"Classic American!",
@@ -44,6 +48,7 @@
                             @"Vegetarian please!", nil];
             [self.tableView setDelegate:self];
             [self.tableView setDataSource:self];
+            [self.tableView setAllowsMultipleSelection:YES];
         }
             break;
         case DIST_CHOICE:
@@ -55,6 +60,7 @@
                             @"Anywhere in the city", nil];
             [self.tableView setDelegate:self];
             [self.tableView setDataSource:self];
+            [self.tableView setAllowsMultipleSelection:NO];
         }
             break;
         case QUAL_CHOICE:
@@ -66,6 +72,7 @@
                             @"Absolutely fantastic", nil];
             [self.tableView setDelegate:self];
             [self.tableView setDataSource:self];
+            [self.tableView setAllowsMultipleSelection:NO];
         }
             break;
     }
@@ -75,10 +82,6 @@
 {
     switch (self.choice) {
         case FOOD_CHOICE:
-        {
-            char byte = 0 | (int)pow(2, self.optionChosen);
-            [[GroupData sharedManager] setByte1: byte];
-        }
             break;
         case DIST_CHOICE:
         {
@@ -101,18 +104,29 @@
                     break;
             }
             
-            char foodByte = [[GroupData sharedManager] byte1];
+            char foodByte = [self.groupData byte1];
             byte |= foodByte;
-            [[GroupData sharedManager] setByte1: byte];
+            [self.groupData setByte1: byte];
         }
             break;
         case QUAL_CHOICE:
         {
-            [[GroupData sharedManager] setByte2: self.optionChosen];
+            [self.groupData setByte2: self.optionChosen];
         }
             break;
     }
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Bump"]) {
+        ((ViewController *)segue.destinationViewController).groupData = self.groupData;
+    }else{
+        ((ChoiceViewController *)segue.destinationViewController).groupData = self.groupData;
+    }
+}
+
+#pragma mark - TableView Datasource methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -142,7 +156,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.optionChosen = indexPath.row;
+    if (self.choice == FOOD_CHOICE) {
+        self.groupData.byte1 ^= (int)pow(2, self.optionChosen);
+    }else{
+        self.optionChosen = indexPath.row;
+    }
 }
 
 - (void)viewDidUnload {

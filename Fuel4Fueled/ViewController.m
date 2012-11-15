@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "OptionViewController.h"
 #import "Person.h"
 #import "BumpClient.h"
-#import "GroupData.h"
 
 @interface ViewController ()
 
@@ -18,6 +18,7 @@
 @implementation ViewController
 @synthesize byte1 = byte1_;
 @synthesize byte2 = byte2_;
+@synthesize groupData = _groupData;
 
 CLLocation *currentLocation;
 Person *p;
@@ -25,14 +26,13 @@ Person *p;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    GroupData *sharedGD = [GroupData sharedManager];
-    currentLocation = [sharedGD returnLocation];
-    self.byte1=[sharedGD byte1];
-    self.byte2=[sharedGD byte2];
+    
+    currentLocation = [self.groupData returnLocation];
+    self.byte1=[self.groupData byte1];
+    self.byte2=[self.groupData byte2];
     NSString *u=[[UIDevice currentDevice] name];
     Person *p=[[Person alloc] init:u byte1:self.byte1 byte2:self.byte2 loc:currentLocation];
-    [sharedGD addPerson: p];
+    [self.groupData addPerson: p];
 }
 
 /*
@@ -118,9 +118,10 @@ Person *p;
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    ((OptionViewController *)[((UITabBarController *)segue.destinationViewController).viewControllers objectAtIndex:0]).groupData = self.groupData;
+    ((OptionViewController *)[((UITabBarController *)segue.destinationViewController).viewControllers objectAtIndex:1]).groupData = self.groupData;
 }
 
 @end

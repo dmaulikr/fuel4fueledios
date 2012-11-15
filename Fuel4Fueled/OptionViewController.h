@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <Twitter/Twitter.h>
+#import "GroupData.h"
 
 @interface OptionViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *title1;
@@ -18,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *rating2;
 @property (weak, nonatomic) IBOutlet UIButton *choose2;
 
+@property (nonatomic) GroupData *groupData;
 @end

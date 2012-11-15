@@ -302,17 +302,20 @@ NSMutableArray *people;
 
 -(void)setRef2:(NSString *)ref
 {
+    //prep for google api request
     NSString *googleApi = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/details/json?reference=%@&sensor=true&key=%@",ref, @"AIzaSyCgw9fpcQE3Qy7v2MBhrwEuuwExef0a8Ck"];
     
     NSString *finalURL = [googleApi  stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSURL *url = [NSURL URLWithString:finalURL];
     
+    //make request
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
     NSError* error = nil;
     NSURLResponse *response;
     NSData *connect= [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
+    //parse request
     SBJsonParser *json          = [[SBJsonParser alloc] init];
     
 	NSString *responseString    = [[NSString alloc] initWithData:connect encoding:NSUTF8StringEncoding];	
@@ -320,6 +323,7 @@ NSMutableArray *people;
 	
 	NSDictionary *parsedJSON    = [json objectWithString:responseString error:&jsonError];
     
+    //check for errors
 	if ([jsonError code]==0) 
     {
         NSString *responseStatus = [NSString stringWithFormat:@"%@",[parsedJSON objectForKey:@"status"]];

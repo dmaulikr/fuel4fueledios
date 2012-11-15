@@ -43,12 +43,6 @@
 		498866031572F64D00EC325B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 498866021572F64C00EC325B /* logo.png */; };
 		498866051572F65500EC325B /* emblem.png in Resources */ = {isa = PBXBuildFile; fileRef = 498866041572F65500EC325B /* emblem.png */; };
 		49BC5C6016552C1800CD828B /* ChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BC5C5F16552C1800CD828B /* ChoiceViewController.m */; };
-		49BD6BDA156C7C1F009892F7 /* FoodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BD6BD9156C7C1F009892F7 /* FoodController.m */; };
-		49BD6BDD156C7C88009892F7 /* DistanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BD6BDC156C7C88009892F7 /* DistanceController.m */; };
-		49BD6BE0156C814E009892F7 /* RatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BD6BDF156C814E009892F7 /* RatingController.m */; };
-		49DFFD88156D94BD00F4E52B /* FoodTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFFD87156D94BD00F4E52B /* FoodTableController.m */; };
-		49DFFD8C156DA42000F4E52B /* DistanceTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFFD8B156DA42000F4E52B /* DistanceTableController.m */; };
-		49DFFD8F156DA49600F4E52B /* RatingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFFD8E156DA49600F4E52B /* RatingTableController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,18 +109,6 @@
 		498866041572F65500EC325B /* emblem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emblem.png; sourceTree = "<group>"; };
 		49BC5C5E16552C1800CD828B /* ChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceViewController.h; sourceTree = "<group>"; };
 		49BC5C5F16552C1800CD828B /* ChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceViewController.m; sourceTree = "<group>"; };
-		49BD6BD8156C7C1F009892F7 /* FoodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodController.h; path = ../FoodController.h; sourceTree = "<group>"; };
-		49BD6BD9156C7C1F009892F7 /* FoodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodController.m; path = ../FoodController.m; sourceTree = "<group>"; };
-		49BD6BDB156C7C88009892F7 /* DistanceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceController.h; sourceTree = "<group>"; };
-		49BD6BDC156C7C88009892F7 /* DistanceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceController.m; sourceTree = "<group>"; };
-		49BD6BDE156C814E009892F7 /* RatingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingController.h; sourceTree = "<group>"; };
-		49BD6BDF156C814E009892F7 /* RatingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingController.m; sourceTree = "<group>"; };
-		49DFFD86156D94BD00F4E52B /* FoodTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTableController.h; sourceTree = "<group>"; };
-		49DFFD87156D94BD00F4E52B /* FoodTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTableController.m; sourceTree = "<group>"; };
-		49DFFD8A156DA42000F4E52B /* DistanceTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceTableController.h; sourceTree = "<group>"; };
-		49DFFD8B156DA42000F4E52B /* DistanceTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceTableController.m; sourceTree = "<group>"; };
-		49DFFD8D156DA49600F4E52B /* RatingTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTableController.h; sourceTree = "<group>"; };
-		49DFFD8E156DA49600F4E52B /* RatingTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTableController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +133,6 @@
 		4902BB24158BF022007351F8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4902BB27158BF040007351F8 /* Table Controllers */,
 				4902BB26158BF02F007351F8 /* Main Controllers */,
 			);
 			name = Controllers;
@@ -164,31 +145,12 @@
 				49BC5C5F16552C1800CD828B /* ChoiceViewController.m */,
 				498865B4157098A200EC325B /* OptionViewController.h */,
 				498865B5157098A200EC325B /* OptionViewController.m */,
-				49BD6BD8156C7C1F009892F7 /* FoodController.h */,
-				49BD6BD9156C7C1F009892F7 /* FoodController.m */,
 				498865FD157228F100EC325B /* RootViewController.h */,
 				498865FE157228F100EC325B /* RootViewController.m */,
-				49BD6BDE156C814E009892F7 /* RatingController.h */,
-				49BD6BDF156C814E009892F7 /* RatingController.m */,
 				4934F8E3156C4DA600DE1C51 /* ViewController.h */,
 				4934F8E4156C4DA600DE1C51 /* ViewController.m */,
-				49BD6BDB156C7C88009892F7 /* DistanceController.h */,
-				49BD6BDC156C7C88009892F7 /* DistanceController.m */,
 			);
 			name = "Main Controllers";
-			sourceTree = "<group>";
-		};
-		4902BB27158BF040007351F8 /* Table Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				49DFFD86156D94BD00F4E52B /* FoodTableController.h */,
-				49DFFD87156D94BD00F4E52B /* FoodTableController.m */,
-				49DFFD8A156DA42000F4E52B /* DistanceTableController.h */,
-				49DFFD8B156DA42000F4E52B /* DistanceTableController.m */,
-				49DFFD8D156DA49600F4E52B /* RatingTableController.h */,
-				49DFFD8E156DA49600F4E52B /* RatingTableController.m */,
-			);
-			name = "Table Controllers";
 			sourceTree = "<group>";
 		};
 		4934F8BF156C4DA600DE1C51 = {
@@ -214,6 +176,7 @@
 		4934F8CD156C4DA600DE1C51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				498865C11571B72400EC325B /* libBump.a */,
 				498865C91571C39A00EC325B /* Twitter.framework */,
 				498865C71571B7D000EC325B /* AudioToolbox.framework */,
 				498865C51571B7BF00EC325B /* CFNetwork.framework */,
@@ -253,7 +216,6 @@
 		498865A9156FE83100EC325B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				498865C11571B72400EC325B /* libBump.a */,
 				498865BB1571B72400EC325B /* BumpClient.h */,
 				498865F11572013200EC325B /* GooglePlaces */,
 				498865CB1571FB2600EC325B /* json */,
@@ -391,12 +353,6 @@
 				4934F8DB156C4DA600DE1C51 /* main.m in Sources */,
 				4934F8DF156C4DA600DE1C51 /* AppDelegate.m in Sources */,
 				4934F8E5156C4DA600DE1C51 /* ViewController.m in Sources */,
-				49BD6BDA156C7C1F009892F7 /* FoodController.m in Sources */,
-				49BD6BDD156C7C88009892F7 /* DistanceController.m in Sources */,
-				49BD6BE0156C814E009892F7 /* RatingController.m in Sources */,
-				49DFFD88156D94BD00F4E52B /* FoodTableController.m in Sources */,
-				49DFFD8C156DA42000F4E52B /* DistanceTableController.m in Sources */,
-				49DFFD8F156DA49600F4E52B /* RatingTableController.m in Sources */,
 				498865AD156FE8B600EC325B /* Person.m in Sources */,
 				498865B6157098A200EC325B /* OptionViewController.m in Sources */,
 				498865E51571FB5100EC325B /* NSObject+SBJson.m in Sources */,

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GroupData.h"
 
 @interface ChoiceViewController : UIViewController
 @property (nonatomic) int choice;
+@property (nonatomic) GroupData *groupData;
 
 @property (strong, nonatomic) IBOutlet UILabel *questionLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
